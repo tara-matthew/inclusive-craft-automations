@@ -1,0 +1,20 @@
+{
+    "mcpServers": {
+        "laravel-boost": {
+            "command": "/Users/tara/Library/Application Support/Herd/bin/php84",
+            "args": [
+                "/Users/tara/Herd/inclusive-craft-automations/artisan",
+                "boost:mcp"
+            ]
+        },
+        "herd": {
+            "command": "/Users/tara/Library/Application Support/Herd/bin/php84",
+            "args": [
+                "/Applications/Herd.app/Contents/Resources/herd-mcp.phar"
+            ],
+            "env": {
+                "SITE_PATH": "/Users/tara/Herd/inclusive-craft-automations"
+            }
+        }
+    }
+}
