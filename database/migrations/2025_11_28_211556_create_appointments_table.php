@@ -15,7 +15,7 @@ return new class extends Migration
         Schema::create('appointments', function (Blueprint $table) {
             $table->id();
             $table->foreignIdFor(Customer::class)->constrained()->cascadeOnDelete()->cascadeOnUpdate();
-            $table->dateTime('send_at');
+            $table->dateTime('scheduled_at');
             $table->timestamps();
         });
     }
