@@ -13,7 +13,7 @@ class StoreAppointmentController extends Controller
     {
         $validated = $request->validated();
 
-        $customer = Customer::create([
+        $customer = Customer::firstOrNew([
             'name' => $validated['name'],
             'secondary_name' => $validated['secondary_name'] ?? null,
             'email' => $validated['email'],
