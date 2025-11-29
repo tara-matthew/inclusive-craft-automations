@@ -3,7 +3,7 @@
 use Carbon\Carbon;
 
 it('stores an appointment and appointment reminder when creating a new customer', function () {
-    Carbon::setTestNow(Carbon::parse('2024-03-31 12:00:00'));
+    Carbon::setTestNow(Carbon::parse('2010-03-31 12:00:00'));
 
     $response = $this->postJson(route('api.appointments.store'), [
         'name' => 'Bobby Newport',
