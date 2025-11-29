@@ -23,7 +23,6 @@ class StoreAppointmentController extends Controller
             'scheduled_at' => $validated['scheduled_at'],
         ]);
 
-        $appointment->customer()->associate($customer);
-        $appointment->save();
+        $appointment->customer()->associate($customer)->save();
     }
 }
