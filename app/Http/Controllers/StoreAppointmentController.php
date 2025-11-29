@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreAppointmentRequest;
 use App\Models\Appointment;
+use App\Models\AppointmentReminder;
 use App\Models\Customer;
-use Illuminate\Http\Request;
+use App\ReminderStatus;
 
 class StoreAppointmentController extends Controller
 {
@@ -24,5 +25,12 @@ class StoreAppointmentController extends Controller
         ]);
 
         $appointment->customer()->associate($customer)->save();
+
+        $appointmentReminder = new AppointmentReminder([
+            'send_at' => $appointment->scheduled_at->subDays(1),
+            'status' => ReminderStatus::UNPROCESSED,
+        ]);
+
+        $appointmentReminder->appointment()->associate($appointment)->save();
     }
 }
