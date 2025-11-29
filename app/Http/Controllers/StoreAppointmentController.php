@@ -12,6 +12,7 @@ class StoreAppointmentController extends Controller
 {
     public function __invoke(StoreAppointmentRequest $request)
     {
+        // TODO use a transaction
         $validated = $request->validated();
 
         $customer = Customer::firstOrCreate([
@@ -32,5 +33,7 @@ class StoreAppointmentController extends Controller
         ]);
 
         $appointmentReminder->appointment()->associate($appointment)->save();
+
+        // create appointment reminders action
     }
 }
