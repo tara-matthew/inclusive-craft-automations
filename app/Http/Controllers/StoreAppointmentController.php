@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreAppointmentRequest;
+use App\Http\Resources\AppointmentResource;
 use App\Models\Appointment;
 use App\Models\AppointmentReminder;
 use App\Models\Customer;
@@ -35,5 +36,7 @@ class StoreAppointmentController extends Controller
         $appointmentReminder->appointment()->associate($appointment)->save();
 
         // create appointment reminders action
+
+        return new AppointmentResource($appointment);
     }
 }
