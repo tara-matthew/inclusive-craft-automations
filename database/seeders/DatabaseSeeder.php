@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Appointment;
+use App\Models\AppointmentReminder;
 use App\Models\User;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
@@ -23,6 +23,6 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
         ]);
 
-        Appointment::factory()->count(10)->create();
+        AppointmentReminder::factory()->count(10)->create();
     }
 }
