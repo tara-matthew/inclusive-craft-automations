@@ -1,37 +1,91 @@
-<div>
+<div class="form-container">
     <form method="POST" action="/appointments">
         @csrf
+        <div>
+        <div class="form-group">
+            <label for="name">
+                Name:
+                <span class="required">*</span>
+            </label>
+            <input required type="text" id="name" name="name" value="{{ old('name') }}" class="@error('name') is-invalid @enderror" />
 
-        <p>
-            <label for="name">Name:</label>
+            @error('name')
+            <div class="error">{{$message}}</div>
+            @enderror
+        </div>
 
-            <input type="text" id="name" name="name" value="{{ old('name') }}" />
-        </p>
+        <div class="form-group">
+            <label for="secondary_name">Secondary Name:</label>
+            <input type="text" id="secondary_name" name="secondary_name" value="{{ old('secondary_name') }}" />
+        </div>
 
-        <p>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" value="{{ old('email') }}" />
-        </p>
+        <div class="form-group">
+            <label for="email">
+                Email:
+                <span class="required">*</span>
+            </label>
+            <input required type="email" id="email" name="email" value="{{ old('email') }}" />
 
-        <p>
-            <label for="scheduled_at">Scheduled at:</label>
-            <input type="date" id="scheduled_at" name="scheduled_at" value="{{ old('scheduled_at') }}" />
-        </p>
+            @error('email')
+            <div class="error">{{$message}}</div>
+            @enderror
+        </div>
 
-        <button type="submit">Submit</button>
+        <div class="form-group">
+            <label for="scheduled_at">
+                Scheduled at:
+                <span class="required">*</span>
+            </label>
+            <input required type="date" id="scheduled_at" name="scheduled_at" value="{{ old('scheduled_at') }}" class="@error('scheduled_at') is-invalid @enderror" />
+
+            @error('scheduled_at')
+                <div class="error">{{$message}}</div>
+            @enderror
+         </div>
+        </div>
+
+
+        <div style="text-align: center;">
+            <button type="submit">Submit</button>
+        </div>
 
         @if(session('status'))
-            <div>{{ session('status') }}</div>
+            <div><strong>{{ session('status') }}</strong></div>
         @endif
+
+
     </form>
 </div>
 
 <style lang="css">
+    body {
+        font-family: Helvetica, serif;
+    }
+    .form-group {
+        margin-bottom: 40px;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+    }
     label {
         display: inline-block;
-        width: 90px;
+        width: 150px;
     }
     input {
         width: 300px;
+    }
+    .form-container {
+        padding: 20px;
+        width:50%;
+        border: 1px solid grey;
+        border-radius: 16px
+    }
+    .required {
+        color: red;
+    }
+    .error {
+        color: red;
+        position: absolute;
+        top: 25px;
     }
 </style>
