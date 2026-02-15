@@ -94,7 +94,7 @@
     .error {
         color: red;
         position: absolute;
-        top: 25px;
+        top: 34px;
     }
     button {
         border-radius: 10px;
