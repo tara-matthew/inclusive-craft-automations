@@ -17,8 +17,8 @@ class StoreAppointmentRequest extends FormRequest
         return [
             'name' => ['required', 'string', 'max:255'],
             'secondary_name' => ['nullable', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'scheduled_at' => ['required', 'date'],
+            'email' => ['required', 'string', 'email', 'max:255'],
+            'scheduled_at' => ['required', 'date', 'after:today'],
         ];
     }
 }
