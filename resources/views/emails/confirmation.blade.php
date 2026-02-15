@@ -25,13 +25,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" media="screen">
   <style>
     @media (max-width: 600px) {
-      .sm-mx-16px {
-        margin-left: 16px !important;
-        margin-right: 16px !important
-      }
-      .sm-mt-16px {
-        margin-top: 16px !important
-      }
       .sm-w-200px {
         width: 200px !important
       }
@@ -47,8 +40,8 @@
 <body style="margin: 0; width: 100%; padding: 0; -webkit-font-smoothing: antialiased; word-break: break-word">
   <div role="article" aria-roledescription="email" aria-label lang="en">
     <div>
-      <div class="sm-mx-16px sm-mt-16px sm-p-3 sm-max-w-full" style="margin-left: auto; margin-right: auto; max-width: 700px; padding: 32px">
-        <div style="text-align: center; padding-top: 35px; padding-left: 16px; padding-right: 16px">
+      <div class="sm-p-3 sm-max-w-full" style="margin-left: auto; margin-right: auto; max-width: 700px; padding: 32px">
+        <div style="padding-left: 16px; padding-right: 16px; padding-top: 36px; text-align: center">
           <div style="background: linear-gradient(#fff, #fff); margin-left: auto; margin-right: auto; width: 224px" class="sm-w-200px">
             <img class="sm-w-200px" src="https://ci3.googleusercontent.com/meips/ADKq_Na0tf6Gaqmoj9Xs9yA61q4Kc0qLK1YhMy6yAs5oNl6vV0bzZMHs3eFi9RDnMktIE53SdS_vQ5vb8Nw9wpa35SLlMGvedr5DcRD0AzaWM7r6lRFhOvccGiBFBcEgVjNd2jzASHr53iOpbYG7u2llouNySvYGFi5dMy81VYPMXn8j_268stcZ1V9kDqhQpVl_20E6R--scu_7WJjPi_Lf7bK558t0npkIZJWWyYzAsmgaaju2rMbVjQ=s0-d-e1-ft#https://static.wixstatic.com/media/6380cb_db1bf159fbef47ed8df9647aa01714e7~mv2.png/v1/fit/w_448,h_2000,al_c,q_85/6380cb_db1bf159fbef47ed8df9647aa01714e7~mv2.png" alt="logo" style="max-width: 100%; vertical-align: middle; width: 224px" width="224">
           </div>
@@ -60,7 +53,8 @@
           <br> December 25th at 2:15 pm.
         </p>
         <p style="font-weight: 100; color: #656b14; font-family: 'Montserrat', Helvetica,Arial, serif; letter-spacing: 0.01em; font-size: 20px; text-align: center">
-          Need to reschedule? Email or call to get in touch.</p>
+          Need to reschedule? Email or call to get in touch.
+        </p>
       </div>
     </div>
   </div>
