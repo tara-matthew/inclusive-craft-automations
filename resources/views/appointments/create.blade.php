@@ -36,7 +36,7 @@
                 Scheduled at:
                 <span class="required">*</span>
             </label>
-            <input required type="date" id="scheduled_at" name="scheduled_at" value="{{ old('scheduled_at') }}" class="@error('scheduled_at') is-invalid @enderror" />
+            <input required type="datetime-local" id="scheduled_at" name="scheduled_at" value="{{ old('scheduled_at') }}" class="@error('scheduled_at') is-invalid @enderror" />
 
             @error('scheduled_at')
                 <div class="error">{{$message}}</div>

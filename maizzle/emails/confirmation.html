@@ -15,7 +15,7 @@
 
             <div class="text-center mb-6">
                 <p class="text-2xl font-thin tracking-[0.01em] text-black" style="font-family: 'Montserrat', Helvetica,Arial, serif;">Your appointment has been confirmed for
-                    <br> December 25th at 2:15 pm.
+                    <br> {{ $appointment->scheduled_at->format('F jS \a\t g:i a') }}.
                 </p>
                 <p class="text-base font-thin tracking-[0.01em] text-black" style="font-family: 'Montserrat', Helvetica,Arial, serif;">
                     Need to reschedule? Email or call to get in touch.

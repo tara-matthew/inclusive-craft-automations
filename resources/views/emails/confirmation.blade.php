@@ -57,7 +57,7 @@
         </div>
         <div style="margin-bottom: 24px; text-align: center">
           <p style="font-family: 'Montserrat', Helvetica,Arial, serif; font-size: 24px; font-weight: 100; letter-spacing: 0.01em; color: #000001">Your appointment has been confirmed for
-            <br> December 25th at 2:15 pm.
+              <br> {{ $appointment->scheduled_at->format('F jS \a\t g:i a') }}.
           </p>
           <p style="font-family: 'Montserrat', Helvetica,Arial, serif; font-size: 16px; font-weight: 100; letter-spacing: 0.01em; color: #000001">
             Need to reschedule? Email or call to get in touch.
