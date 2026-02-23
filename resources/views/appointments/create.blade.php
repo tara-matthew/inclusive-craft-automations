@@ -50,7 +50,7 @@
         </div>
 
         @if(session('status'))
-            <div><strong>{{ session('status') }}</strong></div>
+            <div style="margin-top:20px"><strong>{{ session('status') }}</strong></div>
         @endif
 
 
