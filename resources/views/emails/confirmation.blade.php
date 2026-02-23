@@ -40,21 +40,38 @@
 <body style="margin: 0; width: 100%; padding: 0; -webkit-font-smoothing: antialiased; word-break: break-word">
   <div role="article" aria-roledescription="email" aria-label lang="en">
     <div>
-      <div class="sm-p-3 sm-max-w-full" style="margin-left: auto; margin-right: auto; max-width: 700px; padding: 32px">
+      <div class="sm-p-3 sm-max-w-full" style="margin-left: auto; margin-right: auto; max-width: 700px; background-color: #fffffe; padding: 32px">
         <div style="padding-left: 16px; padding-right: 16px; padding-top: 36px; text-align: center">
-          <div style="background: linear-gradient(#fff, #fff); margin-left: auto; margin-right: auto; width: 224px" class="sm-w-200px">
+          <div style="background: linear-gradient(#fff, #fff); margin-left: auto; margin-right: auto; width: 224px; border-radius: 9999px; background-color: #fffffe" class="sm-w-200px">
             <img class="sm-w-200px" src="https://ci3.googleusercontent.com/meips/ADKq_Na0tf6Gaqmoj9Xs9yA61q4Kc0qLK1YhMy6yAs5oNl6vV0bzZMHs3eFi9RDnMktIE53SdS_vQ5vb8Nw9wpa35SLlMGvedr5DcRD0AzaWM7r6lRFhOvccGiBFBcEgVjNd2jzASHr53iOpbYG7u2llouNySvYGFi5dMy81VYPMXn8j_268stcZ1V9kDqhQpVl_20E6R--scu_7WJjPi_Lf7bK558t0npkIZJWWyYzAsmgaaju2rMbVjQ=s0-d-e1-ft#https://static.wixstatic.com/media/6380cb_db1bf159fbef47ed8df9647aa01714e7~mv2.png/v1/fit/w_448,h_2000,al_c,q_85/6380cb_db1bf159fbef47ed8df9647aa01714e7~mv2.png" alt="logo" style="max-width: 100%; vertical-align: middle; width: 224px" width="224">
           </div>
         </div>
-        <div style="font-weight: 500; padding-left: 12px; padding-right: 12px; text-align: center">
-          <p style="color: black; font-family: Montserrat, Helvetica, Arial, serif; letter-spacing: 0.1em; font-size: 46px;">THANKS FOR GETTING IN TOUCH</p>
+        <div style="padding-left: 12px; padding-right: 12px; text-align: center; font-weight: 500; letter-spacing: 0.1em">
+          <p style="font-family: 'Montserrat', Helvetica, Arial, serif; font-size: 2.875rem; color: #000001">THANKS FOR GETTING IN TOUCH</p>
         </div>
-        <p style="font-weight: 100; color: #656b14; font-family: 'Montserrat', Helvetica,Arial, serif; letter-spacing: 0.01em; text-align: center; font-size: 24px">Your appointment has been confirmed for
-          <br> December 25th at 2:15 pm.
-        </p>
-        <p style="font-weight: 100; color: #656b14; font-family: 'Montserrat', Helvetica,Arial, serif; letter-spacing: 0.01em; font-size: 20px; text-align: center">
-          Need to reschedule? Email or call to get in touch.
-        </p>
+        <div style="margin-bottom: 24px; text-align: center">
+          <p style="font-family: 'Montserrat', Helvetica,Arial, serif; font-size: 24px; font-weight: 100; letter-spacing: 0.01em; color: #000001">Your appointment has been confirmed for
+            <br> December 25th at 2:15 pm.
+          </p>
+          <p style="font-family: 'Montserrat', Helvetica,Arial, serif; font-size: 16px; font-weight: 100; letter-spacing: 0.01em; color: #000001">
+            Need to reschedule? Email or call to get in touch.
+          </p>
+          <p style="font-family: 'Montserrat', Helvetica,Arial, serif; font-size: 16px; font-weight: 100; letter-spacing: 0.01em; color: #000001">
+            Looking for inspiration? Take a look at my website for some ideas.
+          </p>
+          <button>Go to Site</button>
+        </div>
+        <div style="text-align: center">
+          <a style="margin-right: 8px">
+            <img style="max-width: 100%; vertical-align: middle" width="25" height="25" src="https://img.icons8.com/?size=100&id=85154&format=png&color=3A3A3A" alt="instagram">
+          </a>
+          <a style="margin-right: 8px">
+            <img style="max-width: 100%; vertical-align: middle" width="25" height="25" src="https://img.icons8.com/?size=100&id=118490&format=png&color=3A3A3A" alt="facebook-new">
+          </a>
+          <a style="margin-right: 8px">
+            <img style="max-width: 100%; vertical-align: middle" width="25" height="25" src="https://img.icons8.com/?size=100&id=Uj9DyJeLazL6&format=png&color=3A3A3A" alt="linkedin">
+          </a>
+        </div>
       </div>
     </div>
   </div>
