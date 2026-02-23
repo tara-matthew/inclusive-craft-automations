@@ -24,6 +24,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" media="screen">
   <style>
+    .hover-bg-black:hover {
+      background-color: #000001 !important
+    }
+    .hover-text-white:hover {
+      color: #fffffe !important
+    }
     @media (max-width: 600px) {
       .sm-w-200px {
         width: 200px !important
@@ -41,7 +47,7 @@
   <div role="article" aria-roledescription="email" aria-label lang="en">
     <div>
       <div class="sm-p-3 sm-max-w-full" style="margin-left: auto; margin-right: auto; max-width: 700px; background-color: #fffffe; padding: 32px">
-        <div style="padding-left: 16px; padding-right: 16px; padding-top: 36px; text-align: center">
+        <div style="padding-left: 16px; padding-right: 16px; text-align: center">
           <div style="background: linear-gradient(#fff, #fff); margin-left: auto; margin-right: auto; width: 224px; border-radius: 9999px; background-color: #fffffe" class="sm-w-200px">
             <img class="sm-w-200px" src="https://ci3.googleusercontent.com/meips/ADKq_Na0tf6Gaqmoj9Xs9yA61q4Kc0qLK1YhMy6yAs5oNl6vV0bzZMHs3eFi9RDnMktIE53SdS_vQ5vb8Nw9wpa35SLlMGvedr5DcRD0AzaWM7r6lRFhOvccGiBFBcEgVjNd2jzASHr53iOpbYG7u2llouNySvYGFi5dMy81VYPMXn8j_268stcZ1V9kDqhQpVl_20E6R--scu_7WJjPi_Lf7bK558t0npkIZJWWyYzAsmgaaju2rMbVjQ=s0-d-e1-ft#https://static.wixstatic.com/media/6380cb_db1bf159fbef47ed8df9647aa01714e7~mv2.png/v1/fit/w_448,h_2000,al_c,q_85/6380cb_db1bf159fbef47ed8df9647aa01714e7~mv2.png" alt="logo" style="max-width: 100%; vertical-align: middle; width: 224px" width="224">
           </div>
@@ -56,10 +62,10 @@
           <p style="font-family: 'Montserrat', Helvetica,Arial, serif; font-size: 16px; font-weight: 100; letter-spacing: 0.01em; color: #000001">
             Need to reschedule? Email or call to get in touch.
           </p>
-          <p style="font-family: 'Montserrat', Helvetica,Arial, serif; font-size: 16px; font-weight: 100; letter-spacing: 0.01em; color: #000001">
+          <p style="font-family: 'Montserrat', Helvetica,Arial, serif; margin-bottom: 32px; font-size: 16px; font-weight: 100; letter-spacing: 0.01em; color: #000001">
             Looking for inspiration? Take a look at my website for some ideas.
           </p>
-          <button>Go to Site</button>
+          <a style="font-family: 'Montserrat', Helvetica,Arial, serif; cursor: pointer; border: 1px solid #000001; background-color: #fffffe; padding: 8px; font-size: 16px; font-weight: 100; letter-spacing: 0.01em; color: #000001; text-decoration: none" href="#" class="hover-bg-black hover-text-white">Go to Site</a>
         </div>
         <div style="text-align: center">
           <a style="margin-right: 8px">
