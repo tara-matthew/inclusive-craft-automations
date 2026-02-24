@@ -5,7 +5,7 @@ module.exports = {
   ],
   content: [
     './components/**/*.html',
-    './emails/**/*.html',
+    './maizzle-emails/**/*.html',
     './layouts/**/*.html',
   ],
 }
