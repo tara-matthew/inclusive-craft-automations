@@ -1,11 +1,19 @@
 <?php
 
+use App\Events\AppointmentCreated;
+use App\Mail\AppointmentConfirmed;
 use App\Models\Appointment;
 use App\Models\AppointmentReminder;
 use App\ReminderStatus;
 use Carbon\Carbon;
+use Domain\PrintedDesigns\Events\PrintedDesignUploaded;
+use Illuminate\Support\Facades\Event;
+use Illuminate\Support\Facades\Mail;
 
-it('stores an appointment and appointment reminder when creating a new customer', function () {
+
+it('stores an appointment and appointment reminder, and dispatches an event, when creating a new customer', function () {
+    Event::fake();
+
     Carbon::setTestNow(Carbon::parse('2010-03-31 12:00:00'));
 
     $this->post(route('appointments.store'), [
@@ -24,6 +32,8 @@ it('stores an appointment and appointment reminder when creating a new customer'
         'appointment_id' => Appointment::first()->id,
         'send_at' => now()->addDay()->format('Y-m-d H:i:s'),
     ]);
+
+    Event::assertDispatched(AppointmentCreated::class);
 });
 
 it('rolls back updates when part of the request fails', function () {
