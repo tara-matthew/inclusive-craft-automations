@@ -5,7 +5,6 @@ namespace App\Listeners;
 use App\Events\AppointmentCreated;
 use App\Mail\AppointmentConfirmed;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Support\Facades\Mail;
 
 class SendAppointmentConfirmationNotification implements ShouldQueue
