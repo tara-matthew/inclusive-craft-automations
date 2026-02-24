@@ -1,10 +1,12 @@
 {
     "agents": [
-        "phpstorm"
+        "copilot"
     ],
     "editors": [
-        "phpstorm"
+        "phpstorm-copilot"
     ],
-    "guidelines": [],
+    "guidelines": [
+        "revolution/laravel-boost-phpstorm-copilot"
+    ],
     "herd_mcp": true
 }
