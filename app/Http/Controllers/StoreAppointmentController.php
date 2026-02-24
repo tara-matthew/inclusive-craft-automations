@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Events\AppointmentCreated;
 use App\Http\Requests\StoreAppointmentRequest;
 use App\Models\Appointment;
 use App\Models\AppointmentReminder;
@@ -34,7 +35,7 @@ class StoreAppointmentController extends Controller
 
         $appointmentReminder->appointment()->associate($appointment)->save();
 
-        // create appointment reminders action
+        AppointmentCreated::dispatch($appointment);
 
         return back()->with('status', 'Appointment booked!');
     }
