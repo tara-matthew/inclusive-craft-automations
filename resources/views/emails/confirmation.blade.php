@@ -38,7 +38,7 @@
                 max-width: 100% !important
             }
             .sm-p-3 {
-                padding: 12px !important
+                padding: 0.75rem !important
             }
         }
     </style>
