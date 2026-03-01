@@ -107,6 +107,9 @@
         .mr-2 {
             margin-right: 8px !important
         }
+        .no-underline {
+            text-decoration-line: none !important
+        }
         @media (max-width: 600px) {
             .sm-w-200px {
                 width: 200px !important
@@ -140,19 +143,16 @@
                     Need to reschedule? Email or call to get in touch.
                 </p>
                 <p class="mb-8 text-base font-thin tracking-wider text-black" style="font-family: 'Montserrat', Helvetica,Arial, serif;">
-                    Looking for inspiration? Take a look at my website for some ideas.
+                    Take a look at my website for some ideas.
                 </p>
                 <a class="cursor-pointer border-black p-2 text-base font-thin tracking-wider text-black no-underline hover-bg-black hover-text-white" style="font-family: 'Montserrat', Helvetica,Arial, serif;" href="#">Go to Site</a>
             </div>
             <div class="text-center">
-                <a class="mr-2">
+                <a href="https://www.instagram.com" class="mr-2 no-underline">
                     <img class="max-w-full align-middle" width="25" height="25" src="https://img.icons8.com/?size=100&id=85154&format=png&color=3A3A3A" alt="instagram">
                 </a>
-                <a class="mr-2">
+                <a href="https://www.facebook.com/people/Inclusive-Craft-Co/61575127356212/" class="mr-2 no-underline">
                     <img class="max-w-full align-middle" width="25" height="25" src="https://img.icons8.com/?size=100&id=118490&format=png&color=3A3A3A" alt="facebook-new">
-                </a>
-                <a class="mr-2">
-                    <img class="max-w-full align-middle" width="25" height="25" src="https://img.icons8.com/?size=100&id=Uj9DyJeLazL6&format=png&color=3A3A3A" alt="linkedin">
                 </a>
             </div>
         </div>
