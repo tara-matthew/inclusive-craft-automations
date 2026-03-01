@@ -148,7 +148,7 @@
                 <a class="cursor-pointer border-black p-2 text-base font-thin tracking-wider text-black no-underline hover-bg-black hover-text-white" style="font-family: 'Montserrat', Helvetica,Arial, serif;" href="#">Go to Site</a>
             </div>
             <div class="text-center">
-                <a href="https://www.instagram.com" class="mr-2 no-underline">
+                <a href="https://www.instagram.com/inclusive_craft_co" class="mr-2 no-underline">
                     <img class="max-w-full align-middle" width="25" height="25" src="https://img.icons8.com/?size=100&id=85154&format=png&color=3A3A3A" alt="instagram">
                 </a>
                 <a href="https://www.facebook.com/people/Inclusive-Craft-Co/61575127356212/" class="mr-2 no-underline">
