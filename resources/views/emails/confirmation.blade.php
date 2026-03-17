@@ -89,6 +89,9 @@
         .text-base {
             font-size: 16px !important
         }
+        .text-lg {
+            font-size: 18px !important;
+        }
         .mb-8 {
             margin-bottom: 32px !important
         }
@@ -139,15 +142,17 @@
                 <p class="text-2xl font-thin tracking-wider text-black" style="font-family: 'Montserrat', Helvetica,Arial, serif;">Your appointment has been confirmed for
                     <br> {{ $appointment->scheduled_at->format('F jS \a\t g:i a') }}.
                 </p>
-                <p class="text-base font-thin tracking-wider text-black" style="font-family: 'Montserrat', Helvetica,Arial, serif;">
-                    Need to reschedule? Email or call to get in touch.
+                <p class="text-lg font-thin tracking-wider text-black" style="font-family: 'Montserrat', Helvetica,Arial, serif;">
+                    Need to reschedule? Reply to this email, or call to get in touch.
                 </p>
-                <p class="mb-8 text-base font-thin tracking-wider text-black" style="font-family: 'Montserrat', Helvetica,Arial, serif;">
+                <p class="mb-8 text-lg font-thin tracking-wider text-black" style="font-family: 'Montserrat', Helvetica,Arial, serif;">
                     Take a look at my website for some ideas.
                 </p>
                 <a class="cursor-pointer border-black p-2 text-base font-thin tracking-wider text-black no-underline hover-bg-black hover-text-white" style="font-family: 'Montserrat', Helvetica,Arial, serif;" href="#">Go to Site</a>
             </div>
             <div class="text-center">
+                <p style="font-family: 'Montserrat', Helvetica,Arial, serif;">hello@inclusivecraft.co.uk</p>
+                <p style="font-family: 'Montserrat', Helvetica,Arial, serif;">07351 734188</p>
                 <a href="https://www.instagram.com/inclusive_craft_co" class="mr-2 no-underline">
                     <img class="max-w-full align-middle" width="25" height="25" src="https://img.icons8.com/?size=100&id=85154&format=png&color=3A3A3A" alt="instagram">
                 </a>
