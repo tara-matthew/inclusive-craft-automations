@@ -1,15 +1,11 @@
 <?php
 
 use App\Events\AppointmentCreated;
-use App\Mail\AppointmentConfirmed;
 use App\Models\Appointment;
 use App\Models\AppointmentReminder;
 use App\ReminderStatus;
 use Carbon\Carbon;
-use Domain\PrintedDesigns\Events\PrintedDesignUploaded;
 use Illuminate\Support\Facades\Event;
-use Illuminate\Support\Facades\Mail;
-
 
 it('stores an appointment and appointment reminder, and dispatches an event, when creating a new customer', function () {
     Event::fake();
@@ -30,7 +26,7 @@ it('stores an appointment and appointment reminder, and dispatches an event, whe
 
     $this->assertDatabaseHas('appointment_reminders', [
         'appointment_id' => Appointment::first()->id,
-        'send_at' => now()->addDay()->format('Y-m-d H:i:s'),
+        'send_at' => now()->addDay()->setTime(8, 0)->format('Y-m-d H:i:s'),
     ]);
 
     Event::assertDispatched(AppointmentCreated::class);
