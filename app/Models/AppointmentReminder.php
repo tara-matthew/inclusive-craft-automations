@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\ReminderStatus;
 use Database\Factories\AppointmentReminderFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -11,6 +12,14 @@ class AppointmentReminder extends Model
 {
     /** @use HasFactory<AppointmentReminderFactory> */
     use HasFactory;
+
+    protected function casts(): array
+    {
+        return [
+            'send_at' => 'datetime',
+            'status' => ReminderStatus::class,
+        ];
+    }
 
     public function appointment(): BelongsTo
     {

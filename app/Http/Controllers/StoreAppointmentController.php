@@ -30,7 +30,10 @@ class StoreAppointmentController extends Controller
             $appointment->customer()->associate($customer)->save();
 
             $appointmentReminder = new AppointmentReminder([
-                'send_at' => $appointment->scheduled_at->subDays(1),
+                'send_at' => $appointment
+                    ->scheduled_at
+                    ->subDays(1)
+                    ->setTime(8, 0),
                 'status' => ReminderStatus::UNPROCESSED,
             ]);
 
