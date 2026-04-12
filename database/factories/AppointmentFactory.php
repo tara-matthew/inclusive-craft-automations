@@ -20,7 +20,8 @@ class AppointmentFactory extends Factory
     {
         return [
             'customer_id' => Customer::factory(),
-            'scheduled_at' => fake()->dateTimeBetween('now', '+1 years'),
+            'scheduled_at' => fake()->dateTimeBetween('now', '+1 years')
+                ->setTime(fake()->numberBetween(8, 19), fake()->randomElement([0, 15, 30, 45])),
         ];
     }
 }

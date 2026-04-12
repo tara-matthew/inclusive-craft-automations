@@ -22,7 +22,7 @@ class AppointmentReminderFactory extends Factory
         return [
             'appointment_id' => Appointment::factory(),
             'send_at' => function (array $attributes) {
-                return Appointment::find($attributes['appointment_id'])->scheduled_at->subDays(1);
+                return Appointment::find($attributes['appointment_id'])->scheduled_at->subDays(1)->setTime(8, 0);
             },
             'status' => ReminderStatus::UNPROCESSED,
         ];
