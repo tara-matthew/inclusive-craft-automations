@@ -36,8 +36,8 @@ class SendAppointmentReminders implements ShouldQueue
 
         foreach ($dueReminders as $reminder) {
             try {
-                Mail::to(config('mail.to.address'))
-                    ->send(new AppointmentReminderNotification($reminder));
+                Mail::to(config('appointments.email.admin'))
+                    ->send(new AppointmentReminderNotification($reminder->appointment));
 
                 $reminder->update(['status' => ReminderStatus::SENT]);
                 $sentCount++;

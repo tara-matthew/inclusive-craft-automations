@@ -14,3 +14,7 @@ Route::post('/appointments', StoreAppointmentController::class)->name('appointme
 Route::get('/emails/confirmation-preview/{appointment}', function (Appointment $appointment) {
     return view('emails.confirmation', compact('appointment'));
 });
+
+Route::get('/emails/appointment-reminders/{appointment}', function (Appointment $appointment) {
+    return view('emails.reminder', compact('appointment'));
+});

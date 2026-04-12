@@ -2,6 +2,8 @@
 
 namespace App\Mail;
 
+use App\Models\Appointment;
+use App\Models\AppointmentReminder as AppointmentReminderModel;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -16,7 +18,9 @@ class AppointmentReminder extends Mailable implements ShouldQueue
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct(
+        public Appointment $appointment,
+    )
     {
         //
     }
