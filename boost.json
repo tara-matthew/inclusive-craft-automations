@@ -5,8 +5,6 @@
     "editors": [
         "phpstorm-copilot"
     ],
-    "guidelines": [
-        "revolution/laravel-boost-phpstorm-copilot"
-    ],
+    "guidelines": true,
     "herd_mcp": true
 }
