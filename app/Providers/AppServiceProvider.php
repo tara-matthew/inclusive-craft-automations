@@ -46,7 +46,9 @@ class AppServiceProvider extends ServiceProvider
 
     private function configureUrl(): void
     {
-        URL::forceScheme('https');
+        if (app()->environment('production')) {
+            URL::forceScheme('https');
+        }
     }
 
     private function configureDates(): void
