@@ -60,6 +60,11 @@
 <style lang="css">
     body {
         font-family: Helvetica, serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
     }
     .form-group {
         margin-bottom: 40px;
@@ -84,9 +89,6 @@
         width: 25%;
         border: 1px solid grey;
         border-radius: 16px;
-        margin-left: auto;
-        margin-right: auto;
-        margin-top: 200px;
     }
     .required {
         color: red;
