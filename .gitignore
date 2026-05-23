@@ -23,3 +23,5 @@ tests/.pest/snapshots
 Homestead.json
 Homestead.yaml
 Thumbs.db
+.junie/
+.ai/
