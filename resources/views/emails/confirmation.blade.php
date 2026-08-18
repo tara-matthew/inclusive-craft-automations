@@ -132,7 +132,7 @@
         <div class="sm-p-3 sm-max-w-full m-auto p-8 max-w-700">
             <div>
                 <div style="background: linear-gradient(#fff, #fff);" class="w-224 rounded-full bg-white sm-w-200px m-auto">
-                    <img class="sm-w-200px max-w-full align-middle w-224" src="https://ci3.googleusercontent.com/meips/ADKq_Na0tf6Gaqmoj9Xs9yA61q4Kc0qLK1YhMy6yAs5oNl6vV0bzZMHs3eFi9RDnMktIE53SdS_vQ5vb8Nw9wpa35SLlMGvedr5DcRD0AzaWM7r6lRFhOvccGiBFBcEgVjNd2jzASHr53iOpbYG7u2llouNySvYGFi5dMy81VYPMXn8j_268stcZ1V9kDqhQpVl_20E6R--scu_7WJjPi_Lf7bK558t0npkIZJWWyYzAsmgaaju2rMbVjQ=s0-d-e1-ft#https://static.wixstatic.com/media/6380cb_db1bf159fbef47ed8df9647aa01714e7~mv2.png/v1/fit/w_448,h_2000,al_c,q_85/6380cb_db1bf159fbef47ed8df9647aa01714e7~mv2.png" alt="logo" width="224">
+                    <img class="sm-w-200px max-w-full align-middle w-224" src="{{ asset('images/logo.png') }}" alt="logo" width="224">
                 </div>
             </div>
             <div class="px-3 text-center font-medium tracking-wide">
@@ -154,10 +154,10 @@
                 <p style="font-family: 'Montserrat', Helvetica,Arial, serif;">hello@inclusivecraft.co.uk</p>
                 <p style="font-family: 'Montserrat', Helvetica,Arial, serif;">07351 734188</p>
                 <a href="https://www.instagram.com/inclusive_craft_co" class="mr-2 no-underline">
-                    <img class="max-w-full align-middle" width="25" height="25" src="https://img.icons8.com/?size=100&id=85154&format=png&color=3A3A3A" alt="instagram">
+                    <img class="max-w-full align-middle" width="25" height="25" src="{{ asset('images/instagram.png') }}" alt="instagram">
                 </a>
                 <a href="https://www.facebook.com/people/Inclusive-Craft-Co/61575127356212/" class="mr-2 no-underline">
-                    <img class="max-w-full align-middle" width="25" height="25" src="https://img.icons8.com/?size=100&id=118490&format=png&color=3A3A3A" alt="facebook-new">
+                    <img class="max-w-full align-middle" width="25" height="25" src="{{ asset('images/facebook.png') }}" alt="facebook-new">
                 </a>
             </div>
         </div>
