@@ -32,9 +32,11 @@ class AppServiceProvider extends ServiceProvider
 
     private function configureCommands(): void
     {
+        /*
         DB::prohibitDestructiveCommands(
             $this->app->isProduction(),
         );
+        */
     }
 
     private function configureModels(): void
