@@ -17,11 +17,13 @@ class StoreAppointmentController extends Controller
         $validated = $request->validated();
 
         $appointment = DB::transaction(function () use ($validated) {
-            $customer = Customer::firstOrCreate([
-                'name' => $validated['name'],
-                'secondary_name' => $validated['secondary_name'] ?? null,
-                'email' => $validated['email'],
-            ]);
+            $customer = Customer::updateOrCreate(
+                ['email' => $validated['email']],
+                [
+                    'name' => $validated['name'],
+                    'secondary_name' => $validated['secondary_name'] ?? null,
+                ],
+            );
 
             $appointment = new Appointment([
                 'scheduled_at' => $validated['scheduled_at'],
