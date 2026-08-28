@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AppointmentCalendarController;
+use App\Http\Controllers\AppointmentReminderCalendarController;
 use App\Http\Controllers\IndexAppointmentsController;
 use App\Http\Controllers\StoreAppointmentController;
 use App\Http\Controllers\UpdateAppointmentController;
@@ -14,6 +16,9 @@ Route::get('/', function () {
 Route::view('/pin', 'pin')->name('pin.form');
 Route::post('/pin', VerifyPinController::class)->name('pin.verify');
 
+Route::get('/appointments/{appointment}/calendar.ics', AppointmentCalendarController::class)->name('appointments.calendar');
+Route::get('/appointments/{appointment}/reminder-calendar.ics', AppointmentReminderCalendarController::class)->name('appointments.reminder-calendar');
+
 Route::middleware('pin')->group(function () {
     Route::get('/appointments', IndexAppointmentsController::class)->name('appointments.index');
     Route::view('/appointments/create', 'appointments.create')->name('appointments.create');
@@ -21,16 +26,10 @@ Route::middleware('pin')->group(function () {
     Route::patch('/appointments/{appointment}', UpdateAppointmentController::class)->name('appointments.update');
 
     Route::get('/emails/confirmation-preview/{appointment}', function (Appointment $appointment) {
-        return view('emails.confirmation', [
-            'appointment' => $appointment,
-            'calendarLink' => $appointment->customerCalendarLink(),
-        ]);
+        return view('emails.confirmation', compact('appointment'));
     });
 
     Route::get('/emails/appointment-reminders/{appointment}', function (Appointment $appointment) {
-        return view('emails.reminder', [
-            'appointment' => $appointment,
-            'calendarLink' => $appointment->reminderCalendarLink(),
-        ]);
+        return view('emails.reminder', compact('appointment'));
     });
 });

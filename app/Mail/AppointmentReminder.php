@@ -40,7 +40,6 @@ class AppointmentReminder extends Mailable implements ShouldQueue
     {
         return new Content(
             view: 'emails.reminder',
-            with: ['calendarLink' => $this->appointment->reminderCalendarLink()],
         );
     }
 }

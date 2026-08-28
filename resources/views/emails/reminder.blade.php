@@ -29,7 +29,7 @@
     <div style="font-family: 'Montserrat', Helvetica,Arial, serif;">
         <p>Appointment for {{$appointment->customer->name}} is {{ $appointment->scheduled_at->format('F jS \a\t g:i a') }}. </p>
         <p>
-            <a href="{{ $calendarLink->ics() }}">Add to Calendar</a>
+            <a href="{{ route('appointments.reminder-calendar', $appointment) }}">Add to Calendar</a>
         </p>
     </div>
 </div>
