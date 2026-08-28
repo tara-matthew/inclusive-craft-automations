@@ -1,6 +1,8 @@
 <nav class="app-nav">
-    <a href="{{ route('appointments.index') }}" class="{{ request()->routeIs('appointments.index') ? 'active' : '' }}">Appointments</a>
-    <a href="{{ route('appointments.create') }}" class="{{ request()->routeIs('appointments.create') ? 'active' : '' }}">New Appointment</a>
+    <a href="{{ route('appointments.index') }}" class="{{ request()->routeIs('appointments.index') ? 'active' : '' }}"
+        >Appointments</a>
+    <a href="{{ route('appointments.create') }}" class="{{ request()->routeIs('appointments.create') ? 'active' : '' }}"
+        >New Appointment</a>
 </nav>
 
 <style lang="css">

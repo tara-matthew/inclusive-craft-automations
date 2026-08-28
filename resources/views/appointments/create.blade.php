@@ -1,64 +1,75 @@
 @include('partials.nav')
 
 <div class="page-content">
-<div class="form-container">
-    <form method="POST" action="/appointments">
-        @csrf
-        <div>
-        <div class="form-group">
-            <label for="name">
-                Name:
-                <span class="required">*</span>
-            </label>
-            <input required type="text" id="name" name="name" value="{{ old('name') }}" class="@error('name') is-invalid @enderror" />
+    <div class="form-container">
+        <form method="POST" action="/appointments">
+            @csrf
+            <div>
+                <div class="form-group">
+                    <label for="name">
+                        Name:
+                        <span class="required">*</span>
+                    </label>
+                    <input
+                        required
+                        type="text"
+                        id="name"
+                        name="name"
+                        value="{{ old('name') }}"
+                        class="@error('name') is-invalid @enderror"
+                    />
 
-            @error('name')
-            <div class="error">{{$message}}</div>
-            @enderror
-        </div>
+                    @error('name')
+                        <div class="error">{{ $message }}</div>
+                    @enderror
+                </div>
 
-        <div class="form-group">
-            <label for="secondary_name">Secondary Name:</label>
-            <input type="text" id="secondary_name" name="secondary_name" value="{{ old('secondary_name') }}" />
-        </div>
+                <div class="form-group">
+                    <label for="secondary_name">Secondary Name:</label>
+                    <input type="text" id="secondary_name" name="secondary_name" value="{{ old('secondary_name') }}" />
+                </div>
 
-        <div class="form-group">
-            <label for="email">
-                Email:
-                <span class="required">*</span>
-            </label>
-            <input required type="email" id="email" name="email" value="{{ old('email') }}" />
+                <div class="form-group">
+                    <label for="email">
+                        Email:
+                        <span class="required">*</span>
+                    </label>
+                    <input required type="email" id="email" name="email" value="{{ old('email') }}" />
 
-            @error('email')
-            <div class="error">{{$message}}</div>
-            @enderror
-        </div>
+                    @error('email')
+                        <div class="error">{{ $message }}</div>
+                    @enderror
+                </div>
 
-        <div class="form-group">
-            <label for="scheduled_at">
-                Scheduled at:
-                <span class="required">*</span>
-            </label>
-            <input required type="datetime-local" id="scheduled_at" name="scheduled_at" value="{{ old('scheduled_at') }}" class="@error('scheduled_at') is-invalid @enderror" />
+                <div class="form-group">
+                    <label for="scheduled_at">
+                        Scheduled at:
+                        <span class="required">*</span>
+                    </label>
+                    <input
+                        required
+                        type="datetime-local"
+                        id="scheduled_at"
+                        name="scheduled_at"
+                        value="{{ old('scheduled_at') }}"
+                        class="@error('scheduled_at') is-invalid @enderror"
+                    />
 
-            @error('scheduled_at')
-                <div class="error">{{$message}}</div>
-            @enderror
-         </div>
-        </div>
+                    @error('scheduled_at')
+                        <div class="error">{{ $message }}</div>
+                    @enderror
+                </div>
+            </div>
 
+            <div style="text-align: center">
+                <button type="submit">Submit</button>
+            </div>
 
-        <div style="text-align: center;">
-            <button type="submit">Submit</button>
-        </div>
-
-        @if(session('status'))
-            <div style="margin-top:20px"><strong>{{ session('status') }}</strong></div>
-        @endif
-
-
-    </form>
-</div>
+            @if (session('status'))
+                <div style="margin-top: 20px"><strong>{{ session('status') }}</strong></div>
+            @endif
+        </form>
+    </div>
 </div>
 
 <style lang="css">

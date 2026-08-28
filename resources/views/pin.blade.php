@@ -6,14 +6,21 @@
                 PIN:
                 <span class="required">*</span>
             </label>
-            <input required type="password" id="pin" name="pin" inputmode="numeric" class="@error('pin') is-invalid @enderror" />
+            <input
+                required
+                type="password"
+                id="pin"
+                name="pin"
+                inputmode="numeric"
+                class="@error('pin') is-invalid @enderror"
+            />
 
             @error('pin')
-            <div class="error">{{ $message }}</div>
+                <div class="error">{{ $message }}</div>
             @enderror
         </div>
 
-        <div style="text-align: center;">
+        <div style="text-align: center">
             <button type="submit">Verify</button>
         </div>
     </form>
@@ -72,4 +79,3 @@
         background-color: gray;
     }
 </style>
-

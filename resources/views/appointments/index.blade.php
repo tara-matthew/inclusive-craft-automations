@@ -3,7 +3,7 @@
 <div class="list-container">
     <h1>Appointments</h1>
 
-    @if(session('status'))
+    @if (session('status'))
         <div class="status">{{ session('status') }}</div>
     @endif
 
@@ -19,7 +19,7 @@
             </tr>
         </thead>
         <tbody>
-            @forelse($appointments as $appointment)
+            @forelse ($appointments as $appointment)
                 @php $reminder = $appointment->appointmentReminder; @endphp
                 <tr>
                     <td>{{ $appointment->customer->name }}</td>
@@ -41,7 +41,7 @@
                         </form>
 
                         @error('scheduled_at')
-                        <div class="error">{{ $message }}</div>
+                            <div class="error">{{ $message }}</div>
                         @enderror
                     </td>
                 </tr>
@@ -67,7 +67,8 @@
         width: 100%;
         border-collapse: collapse;
     }
-    th, td {
+    th,
+    td {
         text-align: left;
         padding: 10px;
         border-bottom: 1px solid #ddd;
