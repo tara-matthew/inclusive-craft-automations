@@ -77,6 +77,12 @@
         .mb-6 {
             margin-bottom: 24px !important
         }
+        .mt-6 {
+            margin-top: 24px !important
+        }
+        .text-xs {
+            font-size: 12px !important
+        }
         .text-2xl {
             font-size: 24px !important
         }
@@ -149,9 +155,8 @@
                     Take a look at my website for some ideas.
                 </p>
                 <a class="cursor-pointer border-black p-2 text-base font-thin tracking-wider text-black no-underline hover-bg-black hover-text-white" style="font-family: 'Montserrat', Helvetica,Arial, serif;" href="#">Go to Site</a>
-                <p class="mb-8 text-lg font-thin tracking-wider text-black" style="font-family: 'Montserrat', Helvetica,Arial, serif;">
-                    <a class="cursor-pointer border-black p-2 text-base font-thin tracking-wider text-black no-underline hover-bg-black hover-text-white" style="font-family: 'Montserrat', Helvetica,Arial, serif;" href="{{ $calendarLink->google() }}">Add to Google Calendar</a>
-                    <a class="cursor-pointer border-black p-2 text-base font-thin tracking-wider text-black no-underline hover-bg-black hover-text-white" style="font-family: 'Montserrat', Helvetica,Arial, serif;" href="{{ $calendarLink->ics() }}">Add to Calendar</a>
+                <p class="mt-6 text-xs" style="font-family: 'Montserrat', Helvetica,Arial, serif;">
+                    <a href="{{ $calendarLink->ics() }}">Add to Calendar</a>
                 </p>
             </div>
             <div class="text-center">
