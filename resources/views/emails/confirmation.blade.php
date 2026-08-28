@@ -154,7 +154,7 @@
                 <p class="mb-8 text-lg font-thin tracking-wider text-black" style="font-family: 'Montserrat', Helvetica,Arial, serif;">
                     Take a look at my website for some ideas.
                 </p>
-                <a class="cursor-pointer border-black p-2 text-base font-thin tracking-wider text-black no-underline hover-bg-black hover-text-white" style="font-family: 'Montserrat', Helvetica,Arial, serif;" href="#">Go to Site</a>
+                <a class="cursor-pointer border-black p-2 text-base font-thin tracking-wider text-black no-underline hover-bg-black hover-text-white" style="font-family: 'Montserrat', Helvetica,Arial, serif;" href="https://www.inclusivecraft.co.uk/">Go to Site</a>
                 <p class="mt-6 text-xs" style="font-family: 'Montserrat', Helvetica,Arial, serif;">
                     <a href="{{ route('appointments.calendar', $appointment) }}">Add to Calendar</a>
                 </p>
