@@ -20,7 +20,10 @@
         </thead>
         <tbody>
             @forelse ($appointments as $appointment)
-                @php $reminder = $appointment->appointmentReminder; @endphp
+                @php
+                    $reminder = $appointment->appointmentReminder;
+                    $isFailedRow = (int) old('appointment_id') === $appointment->id;
+                @endphp
                 <tr>
                     <td>{{ $appointment->customer->name }}</td>
                     <td>{{ $appointment->customer->email }}</td>
@@ -31,18 +34,21 @@
                         <form method="POST" action="{{ route('appointments.update', $appointment) }}" class="edit-form">
                             @csrf
                             @method('PATCH')
+                            <input type="hidden" name="appointment_id" value="{{ $appointment->id }}" />
                             <input
                                 required
                                 type="datetime-local"
                                 name="scheduled_at"
-                                value="{{ old('scheduled_at', $appointment->scheduled_at->format('Y-m-d\TH:i')) }}"
+                                value="{{ $isFailedRow ? old('scheduled_at') : $appointment->scheduled_at->format('Y-m-d\TH:i') }}"
                             />
                             <button type="submit">Update</button>
                         </form>
 
-                        @error('scheduled_at')
-                            <div class="error">{{ $message }}</div>
-                        @enderror
+                        @if ($isFailedRow)
+                            @error('scheduled_at')
+                                <div class="error">{{ $message }}</div>
+                            @enderror
+                        @endif
                     </td>
                 </tr>
             @empty
