@@ -1,3 +1,5 @@
+@include('partials.nav')
+
 <div class="form-container">
     <form method="POST" action="/appointments">
         @csrf
@@ -60,10 +62,6 @@
 <style lang="css">
     body {
         font-family: Helvetica, serif;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
         margin: 0;
     }
     .form-group {
@@ -85,6 +83,7 @@
         padding: 5px;
     }
     .form-container {
+        margin: 60px auto 0;
         padding: 20px;
         width: 25%;
         border: 1px solid grey;
