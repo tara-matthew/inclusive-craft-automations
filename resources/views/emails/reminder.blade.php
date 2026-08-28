@@ -27,7 +27,7 @@
 <body style="margin: 0; width: 100%; padding: 0; -webkit-font-smoothing: antialiased; word-break: break-word">
 <div role="article" aria-roledescription="email" aria-label lang="en">
     <div style="font-family: 'Montserrat', Helvetica,Arial, serif;">
-        <p>Appointment for {{$appointment->customer->name}} is {{ $appointment->scheduled_at->format('F jS \a\t g:i a') }}. </p>
+        <p>Appointment for {{$appointment->customer->name}} is {{ $appointment->scheduled_at->format('F jS \a\t g:ia') }}. </p>
         <p>
             <a href="{{ route('appointments.reminder-calendar', $appointment) }}">Add to Calendar</a>
         </p>
