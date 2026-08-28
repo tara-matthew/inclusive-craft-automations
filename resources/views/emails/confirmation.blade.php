@@ -146,7 +146,7 @@
             </div>
             <div class="mb-6 text-center">
                 <p class="text-2xl font-thin tracking-wider text-black" style="font-family: 'Montserrat', Helvetica,Arial, serif;">Your appointment has been confirmed for
-                    <br> {{ $appointment->scheduled_at->format('F jS \a\t g:i a') }}.
+                    <br> {{ $appointment->scheduled_at->format('F jS \a\t g:ia') }}.
                 </p>
                 <p class="text-lg font-thin tracking-wider text-black" style="font-family: 'Montserrat', Helvetica,Arial, serif;">
                     Need to reschedule? Reply to this email, or call to get in touch.
