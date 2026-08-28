@@ -6,7 +6,7 @@ use Database\Factories\AppointmentFactory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Appointment extends Model
 {
@@ -28,8 +28,8 @@ class Appointment extends Model
         return $this->belongsTo(Customer::class);
     }
 
-    public function appointmentReminders(): HasMany
+    public function appointmentReminder(): HasOne
     {
-        return $this->hasMany(AppointmentReminder::class);
+        return $this->hasOne(AppointmentReminder::class);
     }
 }
