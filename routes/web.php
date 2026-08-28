@@ -21,10 +21,16 @@ Route::middleware('pin')->group(function () {
     Route::patch('/appointments/{appointment}', UpdateAppointmentController::class)->name('appointments.update');
 
     Route::get('/emails/confirmation-preview/{appointment}', function (Appointment $appointment) {
-        return view('emails.confirmation', compact('appointment'));
+        return view('emails.confirmation', [
+            'appointment' => $appointment,
+            'calendarLink' => $appointment->customerCalendarLink(),
+        ]);
     });
 
     Route::get('/emails/appointment-reminders/{appointment}', function (Appointment $appointment) {
-        return view('emails.reminder', compact('appointment'));
+        return view('emails.reminder', [
+            'appointment' => $appointment,
+            'calendarLink' => $appointment->reminderCalendarLink(),
+        ]);
     });
 });

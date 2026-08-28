@@ -39,6 +39,7 @@ class AppointmentConfirmed extends Mailable
     {
         return new Content(
             view: 'emails.confirmation',
+            with: ['calendarLink' => $this->appointment->customerCalendarLink()],
         );
     }
 }

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f69d18f84afc783df7e0c0b8de24bd3d",
+    "content-hash": "93d53368547e1ab9cd636b9f335e6149",
     "packages": [
         {
             "name": "brick/math",
@@ -3622,6 +3622,71 @@
                 "source": "https://github.com/resend/resend-php/tree/v1.3.0"
             },
             "time": "2026-04-11T10:48:32+00:00"
+        },
+        {
+            "name": "spatie/calendar-links",
+            "version": "2.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/calendar-links.git",
+                "reference": "c92c9dbfeddfc65e8da83cc485efe60d88a52620"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/calendar-links/zipball/c92c9dbfeddfc65e8da83cc485efe60d88a52620",
+                "reference": "c92c9dbfeddfc65e8da83cc485efe60d88a52620",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8.3"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^3.93",
+                "phpunit/phpunit": "^12.5 || ^13.0",
+                "psalm/plugin-phpunit": "^0.19.7",
+                "spatie/phpunit-snapshot-assertions": "^5.3",
+                "vimeo/psalm": "^6.15"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\CalendarLinks\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Sebastian De Deyne",
+                    "email": "sebastian@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Generate add to calendar links for Google, iCal and other calendar systems",
+            "homepage": "https://github.com/spatie/calendar-links",
+            "keywords": [
+                "calendar-links",
+                "google-calendar",
+                "ical",
+                "ics",
+                "outlook",
+                "spatie",
+                "yahoo"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/calendar-links/issues",
+                "source": "https://github.com/spatie/calendar-links/tree/2.1.0"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                }
+            ],
+            "time": "2026-08-20T18:39:04+00:00"
         },
         {
             "name": "symfony/clock",
