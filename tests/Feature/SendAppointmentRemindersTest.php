@@ -11,25 +11,23 @@ it('sends due appointment reminders', function () {
     Mail::fake();
 
     $customer = Customer::factory()->create();
-    $appointment = Appointment::factory()->for($customer)->create();
 
     $dueReminder = AppointmentReminder::factory()
         ->unprocessed()
-        ->for($appointment)
+        ->for(Appointment::factory()->for($customer)->create())
         ->create([
             'send_at' => now(),
         ]);
 
     AppointmentReminder::factory()->unprocessed()
-        ->for($appointment)
+        ->for(Appointment::factory()->for($customer))
         ->create([
             'send_at' => now()->addDay(),
         ]);
 
     AppointmentReminder::factory()
-        ->unprocessed()
         ->sent()
-        ->for($appointment)
+        ->for(Appointment::factory()->for($customer))
         ->create([
             'send_at' => now()->subDay(),
         ]);
@@ -41,7 +39,7 @@ it('sends due appointment reminders', function () {
         'status' => ReminderStatus::SENT,
     ]);
 
-    Mail::assertQueued(\App\Mail\AppointmentReminder::class, config('mail.to.address'));
+    Mail::assertQueued(App\Mail\AppointmentReminder::class, config('mail.to.address'));
     Mail::assertQueuedCount(1);
 });
 
@@ -103,6 +101,6 @@ it('processes multiple due reminders', function () {
         'status' => ReminderStatus::SENT,
     ]);
 
-    Mail::assertQueued(\App\Mail\AppointmentReminder::class, config('mail.to.address'));
+    Mail::assertQueued(App\Mail\AppointmentReminder::class, config('mail.to.address'));
     Mail::assertQueuedCount(2);
 });
