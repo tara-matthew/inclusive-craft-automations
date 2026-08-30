@@ -132,6 +132,9 @@
         color: red;
         margin-top: 2px;
     }
+    input {
+        max-width: 100%;
+    }
     button {
         border-radius: 10px;
         padding: 12px 28px;
