@@ -6,7 +6,7 @@ use App\Models\Appointment;
 use App\Models\Customer;
 use Illuminate\Support\Facades\Mail;
 
-it('sends an appointment confirmation notification to the customer when appointment created event is dispatched', function () {
+it('sends an appointment confirmation notification to the customer and copies in admin and superuser when appointment created event is dispatched', function () {
     Mail::fake();
 
     $customer = Customer::factory()->create([
@@ -19,6 +19,8 @@ it('sends an appointment confirmation notification to the customer when appointm
     AppointmentCreated::dispatch($appointment);
 
     Mail::assertSent(AppointmentConfirmed::class, function ($mail) use ($customer) {
-        return $mail->hasTo($customer->email);
+        return $mail->hasTo($customer->email)
+            && $mail->hasBcc(config('appointments.email.admin'))
+            && $mail->hasBcc(config('appointments.email.superuser'));
     });
 });
