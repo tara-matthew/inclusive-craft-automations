@@ -22,6 +22,11 @@ class SendAppointmentConfirmationNotification implements ShouldQueue
      */
     public function handle(AppointmentCreated $event): void
     {
-        Mail::to($event->appointment->customer->email)->send(new AppointmentConfirmed($event->appointment));
+        Mail::to($event->appointment->customer->email)
+            ->bcc([
+                config('appointments.email.admin'),
+                config('appointments.email.superuser'),
+            ])
+            ->send(new AppointmentConfirmed($event->appointment));
     }
 }
