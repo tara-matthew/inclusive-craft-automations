@@ -1,3 +1,12 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Appointments</title>
+</head>
+<body>
+
 @include('partials.nav')
 
 <div class="list-container">
@@ -25,12 +34,12 @@
                     $isFailedRow = (int) old('appointment_id') === $appointment->id;
                 @endphp
                 <tr>
-                    <td>{{ $appointment->customer->name }}</td>
-                    <td>{{ $appointment->customer->email }}</td>
-                    <td>{{ $appointment->scheduled_at->format('Y-m-d H:i') }}</td>
-                    <td>{{ $reminder?->send_at?->format('Y-m-d H:i') ?? '—' }}</td>
-                    <td>{{ $reminder?->status?->value ?? '—' }}</td>
-                    <td>
+                    <td data-label="Customer">{{ $appointment->customer->name }}</td>
+                    <td data-label="Email">{{ $appointment->customer->email }}</td>
+                    <td data-label="Scheduled at">{{ $appointment->scheduled_at->format('Y-m-d H:i') }}</td>
+                    <td data-label="Reminder due">{{ $reminder?->send_at?->format('Y-m-d H:i') ?? '—' }}</td>
+                    <td data-label="Reminder status">{{ $reminder?->status?->value ?? '—' }}</td>
+                    <td data-label="Edit">
                         <form method="POST" action="{{ route('appointments.update', $appointment) }}" class="edit-form">
                             @csrf
                             @method('PATCH')
@@ -53,7 +62,7 @@
                 </tr>
             @empty
                 <tr>
-                    <td colspan="6">No appointments yet.</td>
+                    <td colspan="6" class="empty-state">No appointments yet.</td>
                 </tr>
             @endforelse
         </tbody>
@@ -68,6 +77,8 @@
     .list-container {
         max-width: 1000px;
         margin: 40px auto;
+        padding: 0 20px;
+        box-sizing: border-box;
     }
     table {
         width: 100%;
@@ -82,6 +93,7 @@
     }
     .edit-form {
         display: flex;
+        flex-wrap: wrap;
         gap: 8px;
         align-items: center;
     }
@@ -91,6 +103,14 @@
         border-width: 1px;
         border-style: solid;
         padding: 5px;
+        box-sizing: border-box;
+    }
+    input[type="datetime-local"] {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-color: #fff;
+        min-width: 0;
+        flex: 1 1 auto;
     }
     button {
         border-radius: 10px;
@@ -111,4 +131,61 @@
         color: red;
         margin-top: 4px;
     }
+    @media (max-width: 640px) {
+        .list-container {
+            margin: 20px auto;
+        }
+        table,
+        thead,
+        tbody,
+        th,
+        td,
+        tr {
+            display: block;
+        }
+        thead {
+            display: none;
+        }
+        tbody tr {
+            margin-bottom: 16px;
+            border: 1px solid #ddd;
+            border-radius: 12px;
+            padding: 8px 12px;
+        }
+        tbody td {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 0;
+            border-bottom: 1px solid #eee;
+        }
+        tbody td:last-child {
+            border-bottom: none;
+        }
+        tbody td::before {
+            content: attr(data-label);
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        tbody td[data-label="Edit"] {
+            flex-direction: column;
+            align-items: stretch;
+            gap: 6px;
+        }
+        tbody td[data-label="Edit"]::before {
+            margin-bottom: 2px;
+        }
+        tbody td.empty-state {
+            display: block;
+            text-align: center;
+            padding: 20px 0;
+        }
+        tbody td.empty-state::before {
+            content: none;
+        }
+    }
 </style>
+
+</body>
+</html>
