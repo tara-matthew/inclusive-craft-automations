@@ -155,9 +155,7 @@
         }
         .form-container {
             flex: 1;
-            min-width: 0;
             max-width: none;
-            overflow-x: hidden;
             border: none;
             border-radius: 0;
             padding: 32px 20px;
