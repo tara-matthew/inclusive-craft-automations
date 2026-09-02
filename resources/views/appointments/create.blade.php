@@ -61,7 +61,7 @@
                         id="scheduled_at"
                         name="scheduled_at"
                         value="{{ old('scheduled_at') }}"
-                        class="date-input @error('scheduled_at') is-invalid @enderror"
+                        class="@error('scheduled_at') is-invalid @enderror"
                     />
 
                     @error('scheduled_at')
@@ -135,9 +135,10 @@
     input {
         max-width: 100%;
     }
-    .date-input {
+    input[type="datetime-local"] {
         -webkit-appearance: none;
         -moz-appearance: none;
+        background-color: #fff;
     }
     button {
         border-radius: 10px;
