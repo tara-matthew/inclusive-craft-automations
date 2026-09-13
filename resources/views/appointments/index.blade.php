@@ -36,8 +36,8 @@
                 <tr>
                     <td data-label="Customer">{{ $appointment->customer->name }}</td>
                     <td data-label="Email">{{ $appointment->customer->email }}</td>
-                    <td data-label="Scheduled at">{{ $appointment->scheduled_at->format('Y-m-d H:i') }}</td>
-                    <td data-label="Reminder due">{{ $reminder?->send_at?->format('Y-m-d H:i') ?? '—' }}</td>
+                    <td data-label="Scheduled at">{{ $appointment->scheduled_at->format('dS M H:i') }}</td>
+                    <td data-label="Reminder due">{{ $reminder?->send_at?->format('dS M H:i') ?? '—' }}</td>
                     <td data-label="Reminder status">{{ $reminder?->status?->value ?? '—' }}</td>
                     <td data-label="Edit">
                         <form method="POST" action="{{ route('appointments.update', $appointment) }}" class="edit-form">
@@ -75,7 +75,7 @@
         margin: 0;
     }
     .list-container {
-        max-width: 1000px;
+        max-width: 1500px;
         margin: 40px auto;
         padding: 0 20px;
         box-sizing: border-box;

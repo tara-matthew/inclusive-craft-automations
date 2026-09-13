@@ -19,8 +19,8 @@ it('lists appointments with customer details and reminder due dates', function (
         ->assertSuccessful()
         ->assertSee('Ann Perkins')
         ->assertSee('ann@example.com')
-        ->assertSee($appointment->scheduled_at->format('Y-m-d H:i'))
-        ->assertSee($reminder->send_at->format('Y-m-d H:i'))
+        ->assertSee($appointment->scheduled_at->format('dS M H:i'))
+        ->assertSee($reminder->send_at->format('dS M H:i'))
         ->assertSee('unprocessed');
 });
 
