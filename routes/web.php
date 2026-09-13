@@ -9,9 +9,7 @@ use App\Http\Controllers\VerifyPinController;
 use App\Models\Appointment;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::redirect('/', '/appointments');
 
 Route::view('/pin', 'pin')->name('pin.form');
 Route::post('/pin', VerifyPinController::class)->name('pin.verify');
