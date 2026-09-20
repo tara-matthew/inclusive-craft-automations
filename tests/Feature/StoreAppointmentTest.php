@@ -12,11 +12,12 @@ it('stores an appointment and appointment reminder, and dispatches an event, whe
 
     Carbon::setTestNow(Carbon::parse('2010-03-31 12:00:00'));
 
-    $this->post(route('appointments.store'), [
-        'name' => 'Bobby Newport',
-        'email' => 'bobby-newport@hotmail.com',
-        'scheduled_at' => now()->addDays(2)->format('Y-m-d H:i:s'),
-    ])
+    $this->withSession(['pin_verified' => true])
+        ->post(route('appointments.store'), [
+            'name' => 'Bobby Newport',
+            'email' => 'bobby-newport@hotmail.com',
+            'scheduled_at' => now()->addDays(2)->format('Y-m-d H:i:s'),
+        ])
         ->assertRedirect();
 
     $this->assertDatabaseHas('customers', [
@@ -43,7 +44,8 @@ it('rolls back updates when part of the request fails', function () {
         'scheduled_at' => now()->addDays(7)->format('Y-m-d H:i:s'),
     ];
 
-    $this->post(route('appointments.store'), $appointmentData)->assertServerError();
+    $this->withSession(['pin_verified' => true])
+        ->post(route('appointments.store'), $appointmentData)->assertServerError();
 
     $this->assertDatabaseMissing('customers', ['email' => 'john@example.com']);
     $this->assertDatabaseMissing('appointments', ['scheduled_at' => $appointmentData['scheduled_at']]);
