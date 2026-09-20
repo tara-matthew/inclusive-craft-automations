@@ -73,3 +73,18 @@ it('lists all appointments when requested', function () {
         ->assertSee($past->customer->name)
         ->assertSee($upcoming->customer->name);
 });
+
+it('only offers editing for appointments in the future', function () {
+    $past = Appointment::factory()->create([
+        'scheduled_at' => now()->subDays(3),
+    ]);
+    $upcoming = Appointment::factory()->create([
+        'scheduled_at' => now()->addDays(3),
+    ]);
+
+    $this->withSession(['pin_verified' => true])
+        ->get(route('appointments.index', ['status' => 'all']))
+        ->assertSuccessful()
+        ->assertSee(route('appointments.update', $upcoming))
+        ->assertDontSee(route('appointments.update', $past));
+});

@@ -50,27 +50,31 @@
                         <td data-label="Reminder due">{{ $reminder?->send_at?->format('dS M H:i') ?? '—' }}</td>
                         <td data-label="Reminder status">{{ $reminder?->status?->value ?? '—' }}</td>
                         <td data-label="Edit">
-                            <form
-                                method="POST"
-                                action="{{ route('appointments.update', $appointment) }}"
-                                class="edit-form"
-                            >
-                                @csrf
-                                @method('PATCH')
-                                <input type="hidden" name="appointment_id" value="{{ $appointment->id }}" />
-                                <input
-                                    required
-                                    type="datetime-local"
-                                    name="scheduled_at"
-                                    value="{{ $isFailedRow ? old('scheduled_at') : $appointment->scheduled_at->format('Y-m-d\TH:i') }}"
-                                />
-                                <button type="submit">Update</button>
-                            </form>
+                            @if ($appointment->scheduled_at->isFuture())
+                                <form
+                                    method="POST"
+                                    action="{{ route('appointments.update', $appointment) }}"
+                                    class="edit-form"
+                                >
+                                    @csrf
+                                    @method('PATCH')
+                                    <input type="hidden" name="appointment_id" value="{{ $appointment->id }}" />
+                                    <input
+                                        required
+                                        type="datetime-local"
+                                        name="scheduled_at"
+                                        value="{{ $isFailedRow ? old('scheduled_at') : $appointment->scheduled_at->format('Y-m-d\TH:i') }}"
+                                    />
+                                    <button type="submit">Update</button>
+                                </form>
 
-                            @if ($isFailedRow)
-                                @error('scheduled_at')
-                                    <div class="error">{{ $message }}</div>
-                                @enderror
+                                @if ($isFailedRow)
+                                    @error('scheduled_at')
+                                        <div class="error">{{ $message }}</div>
+                                    @enderror
+                                @endif
+                            @else
+                                —
                             @endif
                         </td>
                     </tr>
